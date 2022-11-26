@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <script>
-        
-    </script>
-</head>
-<body>
+      "use strict";
+      // let objOne = {
+      //   a: 2,
+      //   b: 3,
+      //   c: 5,
+      //   func: function fun(a) {
+      //     console.log(a);
+      //   }
+      // };
 
-   
-    
-</body>
+      // document.addEventListener("click" , function click(){
+      //   console.log(alert("Clicked"))
+      //   console.log(confirm("Seriously??"))
+      // })
+      // console.log(this); //  returns Window Object
+      // let obj = {
+      //   a: 0,
+      //   func: function check() {
+      //     // returns the local object , i.e obj
+      //     console.log(this);
+         
+      //   },
+      //   funcTwo: () => {
+      //       console.log(this); //returns Window obejct
+      //   }
+      // };
+
+      // let newCheck = () => {
+      //   console.log(this);
+      // };
+
+      // function justCheck(){
+      //   console.log(this)
+      // }
+      // obj.func();
+      // obj.funcTwo(); 
+      // newCheck(); // returns Window Object
+      // justCheck(); // returns undefined
+
+      setTimeout(()=>{
+        console.log("I am here after 5 seconds")
+      }, 5000)
+      console.log("I didn't take time!!")
+
+
+    </script>
+  </head>
+  <body>
+    <h1>Javascript refresher</h1>
+  </body>
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+   
+  
+    The Login button is only designed to work in connection with the JavaScript
+    SDK — if you're building a mobile app or can't use our JavaScript SDK, you
+    should follow the login flow guide for that type of app instead. The
+    Continue with Facebook button replaces earlier versions of the Login button.
+    For more information, see Migration. Plugin Configurator Width The pixel
+    width of the plugin Button Size large Button Text continue_with Button
+    Layout Shape default Enable Logout Button Include name and profile picture
+    when user is signed into Facebook [?] Get Code Continue as {Name} Button The
+    Continue as {Name} button has the text "Continue as {persons' name}" and
+    optionally includes the person's Facebook profile picture if they're logged
+    in to Facebook in the same browser. To use the Continue as {Name} button,
+    you must first load the JavaScript SDK. For instructions on setting up the
+    JavaScript SDK, see the JavaScript SDK Quickstart. Enable Continue as {Name}
+    by adding data-use-continue-as="true" to the settings for your button. The
+    height of the Continue as {Name} button is not customizable. Button Size
+    Height Width Custom Widths? Small 20 px 200 px No Medium 28 px 200 - 320 px
+    Yes Large 40px 240 - 400 px Yes If the you select a size beyond the maximum
+    parameters, the button will default to the maximum width. Best Practices for
+    the Continue as {Name} Button The Continue As {Name} button can be a great
+    way to increase clicks and engagement. It lets the user see their profile
+    picture and name on our Login button and can help make your app feel more
+    personalized. As a result, it can also be confusing if the user isn't
+    expecting to see their name and profile photo in this context. Please
+    consider the following to see if Continue As is best for your app. Even if
+    the Continue As {Name} is not right for your app, you can still try the new
+    JavaScript SDK buttons that say "Continue With Facebook".
+
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "your-app-id",
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v15.0",
+        });
+      };
+    </script>
+
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js"
+    >
+
+      FB.ui(
+        {
+          method: "share",
+          href: "https://developers.facebook.com/docs/",
+        },
+        function (response) {}
+      );
+
+      FB.login(function (response) {
+        if (response.authResponse) {
+          console.log("Welcome!  Fetching your information.... ");
+          FB.api("/me", function (response) {
+            console.log("Good to see you, " + response.name + ".");
+          });
+        } else {
+          console.log("User cancelled login or did not fully authorize.");
+        }
+      });
+
+      var finished_rendering = function () {
+        console.log("finished rendering plugins");
+        var spinner = document.getElementById("spinner");
+        spinner.removeAttribute("style");
+        spinner.removeChild(spinner.childNodes[0]);
+      };
+      FB.Event.subscribe("xfbml.render", finished_rendering);
+    </script>
+
+ 
+    <div id="fb-root"></div>
+    <div
+    class="fb-login-button"
+    data-width=""
+    data-size="large"
+    data-button-type="continue_with"
+    data-layout="default"
+    data-auto-logout-link="false"
+    data-use-continue-as="false"
+  ></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0"
+      nonce="6fN0S4Q5"
+    ></script>
+  </body>
+</html>
