@@ -21,6 +21,7 @@ export default function TextForm(props) {
           onChange={(e) => {
             //   console.log(e.target.value);
             setText(e.target.value);
+            
           }}
           rows="6"
           value={text}
@@ -33,6 +34,7 @@ export default function TextForm(props) {
             //   btnText += 1;
             // console.log(text)
             setText(text.toUpperCase());
+            alert("uuuuhhhh yesssss please ,  hit me againnn")
           }}
         >
           {/* {set}
