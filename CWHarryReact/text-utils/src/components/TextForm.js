@@ -4,15 +4,13 @@ export default function TextForm(props) {
   const [set, setState] = useState(0);
   const [text, setText] = useState("Enter and Click Button");
 
-  //   const handleChange=()=> {
-  //     setState(set + 1);
-  //     // btnText+=1;
-
-  //   const testText = "freeeeee"
-  //   }
+ 
+  const style = {
+    color : props.mode === "light" ? "inherit" : 'white' 
+  }
   return (
     <>
-      <div className="container">
+      <div className="container" style={style}>
         <label htmlFor="myBox">{props.formHeading}</label>
 
         <textarea
@@ -25,6 +23,7 @@ export default function TextForm(props) {
           }}
           rows="6"
           value={text}
+          style={{backgroundColor : props.mode == "light" ? "inherit" : "#3a3b3b" , color:props.mode === "light" ? "inherit" : 'white' }}
         ></textarea>
         <button
           className="btn btn-primary my-2"
@@ -50,7 +49,7 @@ export default function TextForm(props) {
           Reset
         </button>
       </div>
-      <div className="container my-3">
+      <div className="container my-3"  style={style}>
         <h3>Word Counter</h3>
         <p>
           {text.split(" ").length} words and {text.length} characters{" "}
@@ -58,7 +57,7 @@ export default function TextForm(props) {
         <p>{0.008 * text.split(" ").length} minutes</p>
 
         <h3>Preview</h3>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter something to preview"}</p>
       </div>
     </>
   );
