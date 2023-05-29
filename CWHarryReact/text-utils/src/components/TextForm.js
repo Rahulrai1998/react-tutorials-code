@@ -4,10 +4,9 @@ export default function TextForm(props) {
   const [set, setState] = useState(0);
   const [text, setText] = useState("Enter and Click Button");
 
- 
   const style = {
-    color : props.mode === "light" ? "inherit" : 'white' 
-  }
+    color: props.mode === "light" ? "inherit" : "white",
+  };
   return (
     <>
       <div className="container" style={style}>
@@ -19,11 +18,13 @@ export default function TextForm(props) {
           onChange={(e) => {
             //   console.log(e.target.value);
             setText(e.target.value);
-            
           }}
           rows="6"
           value={text}
-          style={{backgroundColor : props.mode == "light" ? "inherit" : "#3a3b3b" , color:props.mode === "light" ? "inherit" : 'white' }}
+          style={{
+            backgroundColor: props.mode == "light" ? "inherit" : "#3a3b3b",
+            color: props.mode === "light" ? "inherit" : "white",
+          }}
         ></textarea>
         <button
           className="btn btn-primary my-2"
@@ -33,12 +34,11 @@ export default function TextForm(props) {
             //   btnText += 1;
             // console.log(text)
             setText(text.toUpperCase());
-            alert("uuuuhhhh yesssss please ,  hit me againnn")
           }}
         >
           {/* {set}
           {btnText} */}
-          HIT ME HARDER
+         UPPERCASE
         </button>
         <button
           className="btn btn-secondary mx-3 my-2"
@@ -49,7 +49,7 @@ export default function TextForm(props) {
           Reset
         </button>
       </div>
-      <div className="container my-3"  style={style}>
+      <div className="container my-3" style={style}>
         <h3>Word Counter</h3>
         <p>
           {text.split(" ").length} words and {text.length} characters{" "}
