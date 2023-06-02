@@ -34,11 +34,12 @@ export default function TextForm(props) {
             //   btnText += 1;
             // console.log(text)
             setText(text.toUpperCase());
+            props.showAlert("Capitalized", "success");
           }}
         >
           {/* {set}
           {btnText} */}
-         UPPERCASE
+          UPPERCASE
         </button>
         <button
           className="btn btn-secondary mx-3 my-2"
